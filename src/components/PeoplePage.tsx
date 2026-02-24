@@ -24,7 +24,7 @@ export const PeoplePage = () => {
     getPeople()
       .then(setPeople)
       .catch(() => {
-        setError('Something went wron');
+        setError('Something went wrong');
       })
       .finally(() => {
         setLoading(false);
@@ -38,8 +38,16 @@ export const PeoplePage = () => {
       return false;
     }
 
-    if (query && !person.name.toLowerCase().includes(query.toLowerCase())) {
-      return false;
+    if (query) {
+      const q = query.toLowerCase();
+      const matches =
+        person.name.toLowerCase().includes(q) ||
+        (person.motherName && person.motherName.toLowerCase().includes(q)) ||
+        (person.fatherName && person.fatherName.toLowerCase().includes(q));
+
+      if (matches) {
+        return false;
+      }
     }
 
     if (centuries.length > 0 && !centuries.includes(String(personCentury))) {
