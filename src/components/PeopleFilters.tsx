@@ -9,7 +9,7 @@ export const PeopleFilters = () => {
   const query = searchParams.get('query') || '';
   const centuries = searchParams.getAll('centuries');
 
-  const toggelCenturies = (century: string) => {
+  const toggleCenturies = (century: string) => {
     const current = searchParams.getAll('centuries');
 
     if (current.includes(century)) {
@@ -79,7 +79,7 @@ export const PeopleFilters = () => {
               className={classNames('button mr-1', {
                 'is-info': centuries.includes('16'),
               })}
-              params={toggelCenturies('16')}
+              params={toggleCenturies('16')}
             >
               16
             </SearchLink>
@@ -89,7 +89,7 @@ export const PeopleFilters = () => {
               className={classNames('button mr-1', {
                 'is-info': centuries.includes('17'),
               })}
-              params={toggelCenturies('17')}
+              params={toggleCenturies('17')}
             >
               17
             </SearchLink>
@@ -99,7 +99,7 @@ export const PeopleFilters = () => {
               className={classNames('button mr-1', {
                 'is-info': centuries.includes('18'),
               })}
-              params={toggelCenturies('18')}
+              params={toggleCenturies('18')}
             >
               18
             </SearchLink>
@@ -109,7 +109,7 @@ export const PeopleFilters = () => {
               className={classNames('button mr-1', {
                 'is-info': centuries.includes('19'),
               })}
-              params={toggelCenturies('19')}
+              params={toggleCenturies('19')}
             >
               19
             </SearchLink>
@@ -119,7 +119,7 @@ export const PeopleFilters = () => {
               className={classNames('button mr-1', {
                 'is-info': centuries.includes('20'),
               })}
-              params={toggelCenturies('20')}
+              params={toggleCenturies('20')}
             >
               20
             </SearchLink>

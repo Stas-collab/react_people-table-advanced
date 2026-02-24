@@ -45,7 +45,7 @@ export const PeoplePage = () => {
         (person.motherName && person.motherName.toLowerCase().includes(q)) ||
         (person.fatherName && person.fatherName.toLowerCase().includes(q));
 
-      if (matches) {
+      if (!matches) {
         return false;
       }
     }
